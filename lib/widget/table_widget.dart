@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -187,7 +189,7 @@ class TableWidget extends StatelessWidget {
       BuildContext context, String formId, FormEntity formData) {
     return AlertDialog(
       title: const Text('Records'),
-      content: const ResultPageWidget(),
+      content: ResultPageWidget(formData: formData,),
       actions: <Widget>[
         TextButton(
           onPressed: () {
@@ -255,9 +257,9 @@ class TableWidget extends StatelessWidget {
 
 class ResultPageWidget extends StatelessWidget {
   const ResultPageWidget({
-    Key? key,
+    Key? key, required this.formData,
   }) : super(key: key);
-
+  final FormEntity formData;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -266,9 +268,9 @@ class ResultPageWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Score'),
-              Text('100'),
+            children: [
+              const Text('Problem Solving Ability'),
+              Text(formData.problemSolvingAbility.toString()),
             ],
           ),
         ),
@@ -276,9 +278,9 @@ class ResultPageWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Score'),
-              Text('100'),
+            children: [
+              const Text('Job Knowledge'),
+              Text(formData.jobKnowledge.toString()),
             ],
           ),
         ),
@@ -286,9 +288,9 @@ class ResultPageWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Score'),
-              Text('100'),
+            children: [
+              Text('Productivity'),
+              Text(formData.productivity.toString()),
             ],
           ),
         ),
@@ -296,9 +298,9 @@ class ResultPageWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Score'),
-              Text('100'),
+            children: [
+              Text('Communication Skill'),
+              Text(formData.communicationSkill.toString()),
             ],
           ),
         ),
@@ -306,9 +308,9 @@ class ResultPageWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Score'),
-              Text('100'),
+            children: [
+              const Text('Leadership'),
+              Text(formData.leadership.toString()),
             ],
           ),
         ),
@@ -316,9 +318,9 @@ class ResultPageWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 13, horizontal: 3),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Score'),
-              Text('100'),
+            children: [
+              Text('Creativity'),
+              Text(formData.creativity.toString()),
             ],
           ),
         ),

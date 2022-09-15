@@ -5,7 +5,6 @@ import 'package:major_project/bloc/manager_bloc/table_widget_bloc/table_widget_s
 
 class TableWidgetBloc extends Bloc<TableWidgetEvent, TableWidgetState> {
   TableWidgetBloc() : super(TableWidgetInitial()) {
-
     on<UpdateButtonEvent>((event, emit) => UpdateButtonState());
   }
 }

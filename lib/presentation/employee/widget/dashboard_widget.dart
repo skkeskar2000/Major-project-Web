@@ -16,7 +16,7 @@ class EmployeeDashboardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<EmployeeFormBloc>(context)
-        .add(GetFormEvent(userId: userId));
+        .add(GetFormEvent(userId: userId, isDisplay: true),);
     return Scaffold(
       body: BlocBuilder<EmployeeFormBloc, EmployeeFormState>(
           builder: (context, state) {

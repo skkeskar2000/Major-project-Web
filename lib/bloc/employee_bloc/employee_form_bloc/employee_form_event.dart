@@ -6,8 +6,9 @@ abstract class EmployeeFormEvent {}
 
 class CheckFormFilledEvent extends EmployeeFormEvent {
   final String userId;
+  final bool isDisplay;
 
-  CheckFormFilledEvent({required this.userId});
+  CheckFormFilledEvent({required this.isDisplay, required this.userId});
 }
 
 class FailureEvent extends EmployeeFormEvent {}
@@ -42,5 +43,6 @@ class SubmitButtonEvent extends EmployeeFormEvent {
 
 class GetFormEvent extends EmployeeFormEvent {
   final String userId;
-  GetFormEvent({required this.userId});
+  final bool isDisplay;
+  GetFormEvent( {required this.isDisplay,required this.userId});
 }

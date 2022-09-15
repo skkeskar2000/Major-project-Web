@@ -60,7 +60,7 @@ Future<void> getForm(event, Emitter<EmployeeFormState> emit) async {
     };
 
     var url =
-        Uri.parse('http://localhost:5000/form/getform?userId=${event.userId}');
+        Uri.parse('http://localhost:5000/form/getform?userId=${event.userId}&isDisplay=${event.isDisplay}');
 
     final response = await http.get(url, headers: headers);
     var data = jsonDecode(response.body);

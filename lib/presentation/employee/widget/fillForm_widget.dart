@@ -29,7 +29,7 @@ class FillFormWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<EmployeeFormBloc>(context).add(CheckFormFilledEvent(userId: id));
+    BlocProvider.of<EmployeeFormBloc>(context).add(CheckFormFilledEvent(userId: id, isDisplay: false));
     return BlocBuilder<EmployeeFormBloc, EmployeeFormState>(
       builder: (context, state) {
         if (state is EmployeeFormInitialState) {

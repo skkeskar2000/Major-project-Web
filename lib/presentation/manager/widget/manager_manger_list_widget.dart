@@ -92,7 +92,7 @@ class ManagerManagerListWidget extends StatelessWidget {
                         radius: 25,
                         backgroundColor: Colors.black12,
                         child: ClipRRect(
-                          child: Image.network('https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png'),
+                          child: Image.network('https://cdn-icons-png.flaticon.com/512/3135/3135715.png'),
                         ),
                       ),
                       Text(
